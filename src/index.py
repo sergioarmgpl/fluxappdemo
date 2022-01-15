@@ -17,7 +17,7 @@ def url_health():
 
 @app.route("/_version")
 def url_version():
-    return "1.0.6"
+    return "last changes"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
