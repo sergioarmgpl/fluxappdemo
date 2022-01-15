@@ -25,6 +25,10 @@ jobs:
       -
         name: Build and push
         uses: docker/build-push-action@v2
+      - 
+        name: Generate Hash for Image Tag
+        id: genhash
+        run: echo "::set-output name=hash::$(echo ${GITHUB_SHA} | cut -c1-6)"
       -
         name: Build and push
         uses: docker/build-push-action@v2
@@ -32,4 +36,4 @@ jobs:
           context: .
           platforms: linux/arm64
           push: true
-          tags: sergioarmgpl/fluxappdemo:${{ GITHUB_SHA::6 }}
+          tags: sergioarmgpl/fluxappdemo:${{ steps.genhash.outputs.hash }}
