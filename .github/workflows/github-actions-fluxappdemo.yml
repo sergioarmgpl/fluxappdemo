@@ -25,7 +25,7 @@ jobs:
       - 
         name: Generate Hash for Image Tag
         id: genhash
-        run: echo "::set-output name=hash::RELEASE.(date +%d/%m/%Y-%H:%M:%S).$(echo ${GITHUB_SHA} | cut -c1-6)"
+        run: echo "::set-output name=hash::RELEASE.$(date +%d/%m/%Y-%H:%M:%S).$(echo ${GITHUB_SHA} | cut -c1-6)"
       -
         name: Build and push
         uses: docker/build-push-action@v2
