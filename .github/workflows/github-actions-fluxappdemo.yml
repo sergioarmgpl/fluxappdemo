@@ -25,7 +25,11 @@ jobs:
       -
         name: Build and push
         uses: docker/build-push-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
         with:
           context: .
+          platforms: linux/arm64
           push: true
-          tags: sergioarmgpl/fluxappdemo:${GITHUB_SHA::6}
+          tags: sergioarmgpl/fluxappdemo:${{ GITHUB_SHA::6 }}
