@@ -17,7 +17,7 @@ def url_health():
 
 @app.route("/_version")
 def url_version():
-    return "22:27"
+    return "23:28"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
